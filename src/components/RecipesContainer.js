@@ -1,6 +1,34 @@
 import React, { Component } from 'react'
 
 class RecipesContainer extends Component {
+
+
+    constructor(props) {
+        super(props)
+        this.state = {
+          recipes: []
+        }
+      }
+
+
+
+    fetchRecipes() {
+          fetch('http://localhost:3000/api/v1/recipes', {
+          mode: 'no-cors',
+         })
+          .then(resp => resp.json())
+          .then (response => {
+            this.setState({Recipes: response.data})
+          })
+          .catch(error => console.log(error))
+        }
+  
+
+        componentDidMount() {
+            this.fetchRecipes()
+          }
+
+
   render() {
     return (
       <div>
@@ -17,4 +45,4 @@ class RecipesContainer extends Component {
   }
 }
 
-export default TodosContainer
+export default RecipesContainer
