@@ -1,8 +1,9 @@
 import React from 'react';
-
-
-
-      <h1>Recipe Page</h1>
  
-
+const Recipe = ({ title }) => (
+  <div className="recipe">
+    <h3>{ title }</h3>
+  </div>
+)
+ 
 export default Recipe;
