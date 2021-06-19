@@ -1,8 +1,10 @@
 import React from 'react';
-
-
-
-      <h1>Recipes Page</h1>
+import Recipe from './Recipe';
  
-
+const RecipeList = ({ recipes }) => (
+  <div className="recipe-list">
+    { recipes.map(recipe=> <Recipe title={recipe.title} />) }
+  </div>
+)
+ 
 export default Recipes;
