@@ -1,19 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+//import Recipes from '.components/Recipes';
 
 class RecipesContainer extends Component {
 
+    constructor() {
+        super()
 
-    constructor(props) {
-        super(props)
         this.state = {
           recipes: []
         }
       }
-
-    
-
-
-
+   // alternative code to fetch data from api
     //fetchRecipes() {
           //fetch('http://localhost:3000/api/v1/recipes')
          // .then(resp => resp.json())
@@ -43,33 +40,11 @@ class RecipesContainer extends Component {
 
 
   render() {
-    return (
-      <div>
-	    <div className="inputContainer">
-	    <input className="RecipeInput" type="text" 
-	    placeholder="Add a Recipe" maxLength="50" />
-      onKeyPress={this.createRecipe} />
-	    </div>  	    
-      <div className="container-fluid">
-	    <ul className="recipeList">
-		  
-      {this.state.recipes.map((recipe) => {
-
-		    return(
-		      <li className="recipe" recipe={recipe} key={recipe.id}>
-			<input className="recipeCheckbox" type="checkbox" />              
-			<label className="recipeLabel">{recipe.title}</label>
-			<span className="deleteRecipeBtn">x</span>
-		      </li>
-		    )       
-		  })} 	
-
-	   </ul>
-	   </div>
-      </div>    
-    )
+    return <Recipes recipes={this.state.recipes} />
   }
 }
+  
 
 
-export default RecipesContainer
+
+export default RecipesContainer;
