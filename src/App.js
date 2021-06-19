@@ -4,9 +4,11 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import NavBar from '../components/NavBar';
-import RecipesContainer from './RecipesContainer';
-import RecipeInput from '../components/RecipeInput';
+import {connect} from 'react-redux';
+import NavBar from './components/NavBar';
+import RecipesContainer from './containers/RecipesContainer';
+import RecipeInput from './components/RecipeInput';
+import Home from './components/Home';
 
 class App extends Component {
   render() {
@@ -20,10 +22,6 @@ class App extends Component {
         </div>
       </Router>
         
-
-
-
-
 
         //<div className="header">
         //  <h1>Recipe List</h1>
