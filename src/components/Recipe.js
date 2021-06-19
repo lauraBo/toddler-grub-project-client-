@@ -9,3 +9,4 @@ const Recipe = ({ title }) => (
 export default Recipe;
 
 // need title, ingredients, method , time, freezable
+
