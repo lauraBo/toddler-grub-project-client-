@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Recipes from '.components/Recipes';
+import RecipeInput from '../components/recipeInput';
 
 class RecipesContainer extends Component {
 
@@ -41,7 +42,12 @@ class RecipesContainer extends Component {
 
 
   render() {
-    return <Recipes recipes={this.props.recipes} />
+    return (
+    <div>
+    <RecipeInput addRecipe={this.props.addRecipe}/>
+    <Recipes recipes={this.props.recipes}/>
+  </div>
+    )
   }
 }
 
@@ -51,6 +57,6 @@ const mapStateToProps = state => {
   }
 }
   
+const mapDispatchToProps = dispatch => ({ addRecipe: recipe => dispatch({ type: "ADD_RECIPE", recipe}) })
 
-
-export default connect(mapStateToProps)(RecipesContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer);
