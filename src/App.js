@@ -22,11 +22,6 @@ class App extends Component {
         </div>
       </Router>
         
-
-        //<div className="header">
-        //  <h1>Recipe List</h1>
-        //</div>
-       // <RecipesContainer />
       
       
     );
