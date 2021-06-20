@@ -14,7 +14,7 @@ export default function recipeReducer(state = {
         cats: [...state.recipes],
         loading: true
       }
-        case 'DISPLAY_RECIPES':
+        case 'DISPLAY_RECIPES': //or should this be names FETCH_RECIPES
           return{
 
 

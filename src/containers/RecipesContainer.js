@@ -35,5 +35,5 @@ const mapStateToProps = state => {
   
 const mapDispatchToProps = dispatch => ({ addRecipe: recipe => dispatch({ type: "ADD_RECIPE", recipe}) })
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer); //how do I add FetchRecipes?
+export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer); //how do I add fetchRecipes?
 
