@@ -8,9 +8,23 @@ export default function recipeReducer(state = {
           ...state,
           recipes: [...state.recipes, action.recipe]
         }
-  
+        case 'LOADING_RECIPES':
+      return {
+        ...state,
+        cats: [...state.recipes],
+        loading: true
+      }
+        case 'DISPLAY_RECIPES':
+          return{
+
+
+          }
+          
       default:
         return state;
   
     }
   };
+
+
+ 
