@@ -9,14 +9,14 @@ export class RecipeInput extends Component {
     ingredients: '',
     method: '',
     time: '',
-    freezable: ''
+    freezable: ''  //do i need a constructor(props) function for this?
     
   }
 
   //can I use this to simplify code? ;
   //handleOnChange(event) {
     //this.setState({
-      //name: event.target.value,
+      //?: event.target.value,
     //});
   //}
 
@@ -54,7 +54,7 @@ export class RecipeInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addRecipe(this.state);
+    this.props.addRecipe(this.state);     //do i need to add this.setState to clear form?
   }
 
   render() {
@@ -101,4 +101,4 @@ export class RecipeInput extends Component {
   }
 };
 
-export default connect(null, { addRecipe })(RecipeInput);
+export default connect(null, { addRecipe })(RecipeInput); //do I still need this?

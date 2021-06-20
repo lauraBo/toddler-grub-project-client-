@@ -2,17 +2,25 @@ import React from 'react';
 import Recipe from './Recipe';
 
 
-const Recipes = props => {
-  const recipes = props.recipes.map((recipe, index) => {
-    return <li key={index}>{recipe.title}</li>;
-  });
+class Recipes extends Component {
 
-  return (
-    <div>
-      {recipes}
-    </div>
-  );
+  render() {
+    const { recipes } = this.props;
+    const recipeList = recipes.map(recipe => {
+      return (
+        <Recipe
+            key={recipe.id}
+            recipe={recipe}
+        />
+      )
+    });
 
+    return(
+      <ul>
+        {recipeList}
+      </ul>
+    );
+  }
 };
 
 export default Recipes;
