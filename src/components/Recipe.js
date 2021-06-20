@@ -1,12 +1,20 @@
-import React from 'react';
- 
-const Recipe = ({ title }) => (
-  <div className="recipe">
-    <h3>{ title }</h3>
-  </div>
-)
- 
+import React, { Component } from 'react';
+
+class Recipe extends Component {
+
+
+  render() {
+    const { recipe } = this.props;
+
+    return (
+      <div>
+        <li>
+          {recipe.text}  
+        </li>
+      </div>
+      // how do i display all the fields? i.e ingredients, method, time etc 
+    );
+  }
+};
+
 export default Recipe;
-
-// need title, ingredients, method , time, freezable
-
