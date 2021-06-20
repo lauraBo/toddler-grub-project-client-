@@ -13,6 +13,13 @@ export class RecipeInput extends Component {
     
   }
 
+  //can I use this to simplify code? ;
+  //handleOnChange(event) {
+    //this.setState({
+      //name: event.target.value,
+    //});
+  //}
+
   handleOnTitleChange = event => {
     this.setState({
       title: event.target.value
