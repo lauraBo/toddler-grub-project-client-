@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchRecipes } from '../actions/fetchRecipes';
+import fetchRecipes from '../actions/fetchRecipesMain';
 import {getRecipesError, getRecipes, getRecipesPending} from '../reducers/recipeReducer';
 import Recipes from '../components/Recipes';
 import RecipeInput from '../components/RecipeInput';
@@ -34,7 +34,7 @@ const mapStateToProps = state => {
 }
   
 const mapDispatchToProps = dispatch => ({ addRecipe: recipe => dispatch({ type: "ADD_RECIPE", recipe}),
-                                          {fetchRecipes} })
+                                          fetchRecipes: () => dispatch(fetchRecipes())})
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer); 
 

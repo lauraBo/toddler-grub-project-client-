@@ -1,5 +1,6 @@
 
-import {fetchRecipesPending, fetchRecipesSuccess, fetchRecipesError} from './fetchRecipes';
+//import { fetchRecipesPending, fetchRecipesSuccess, fetchRecipesError } from './fetchRecipesLoading';
+import { FETCH_RECIPES_PENDING, FETCH_RECIPES_SUCCESS, FETCH_RECIPES_ERROR } from '../actions/actionTypes';
 
 function fetchRecipes() {
     return dispatch => {

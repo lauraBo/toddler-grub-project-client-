@@ -1,4 +1,4 @@
-import {FETCH_RECIPES_PENDING, FETCH_RECIPES_SUCCESS, FETCH_RECIPES_ERROR} from '../actions/fetchRecipes';
+import { FETCH_RECIPES_PENDING, FETCH_RECIPES_SUCCESS, FETCH_RECIPES_ERROR } from '../actions/actionTypes';
 
 const initialState = {
   pending: false,
