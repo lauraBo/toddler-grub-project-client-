@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchRecipes } from '../actions/fetchRecipes';
+import {getRecipesError, getRecipes, getRecipesPending} from '../reducers/recipeReducer';
 import Recipes from '../components/Recipes';
 import RecipeInput from '../components/RecipeInput';
+//import loading spinner?
 
 class RecipesContainer extends Component {
 
-    constructor() {
-        super()
-        this.state = {
-          recipes: []
-        }
+    constructor(props) {
+        super(props);
       }
 
-    componentDidMount() {
-      this.props.fetchRecipes()
-        }
+        componentWillMount() {
+          const {fetchRecipes} = this.props;
+          fetchRecipes();
+      }
 
     render() {
       return (
@@ -33,7 +33,8 @@ const mapStateToProps = state => {
   }
 }
   
-const mapDispatchToProps = dispatch => ({ addRecipe: recipe => dispatch({ type: "ADD_RECIPE", recipe}) })
+const mapDispatchToProps = dispatch => ({ addRecipe: recipe => dispatch({ type: "ADD_RECIPE", recipe}),
+                                          {fetchRecipes} })
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer); //how do I add fetchRecipes?
+export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer); 
 

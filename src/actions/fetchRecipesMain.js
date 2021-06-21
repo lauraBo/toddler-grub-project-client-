@@ -10,7 +10,7 @@ function fetchRecipes() {
             if(res.error) {
                 throw(res.error);
             }
-            dispatch(fetchRecipesSuccess(res.recipes);
+            dispatch(fetchRecipesSuccess(res.recipes));
             return res.recipes;
         })
         .catch(error => {
