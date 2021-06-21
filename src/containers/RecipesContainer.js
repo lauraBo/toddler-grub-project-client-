@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import fetchRecipes from '../actions/fetchRecipesMain';
-import {getRecipesError, getRecipes, getRecipesPending} from '../reducers/recipeReducer';
+import { loadRecipes, addRecipe, toggleRecipe} from '../actions/actionCreators'
+//import fetchRecipes from '../actions/fetchRecipesMain';
+//import {getRecipesError, getRecipes, getRecipesPending} from '../reducers/recipeReducer';
 import Recipes from '../components/Recipes';
 import RecipeInput from '../components/RecipeInput';
 //import loading spinner?
@@ -12,9 +13,19 @@ class RecipesContainer extends Component {
         super(props);
       }
 
+
+      function fetchRecipes() {
+            fetch('http://localhost:3000/api/v1/recipes')
+            .then(res => res.json())
+            .then(res => {
+                this.props.dispatch(loadRecipes(res.data));
+            })
+            .catch(error => console.log(error))
+            }
+   
+
         componentWillMount() {
-          const {fetchRecipes} = this.props;
-          fetchRecipes();
+          this.fetchRecipes();
       }
 
     render() {
@@ -33,8 +44,8 @@ const mapStateToProps = state => {
   }
 }
   
-const mapDispatchToProps = dispatch => ({ addRecipe: recipe => dispatch({ type: "ADD_RECIPE", recipe}),
-                                          fetchRecipes: () => dispatch(fetchRecipes())})
+const mapDispatchToProps = dispatch => ({ addRecipe: recipe => dispatch({ type: "ADD_RECIPE", recipe}) })
+                                          
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer); 
 
