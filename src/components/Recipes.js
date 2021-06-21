@@ -1,5 +1,6 @@
-import React from 'react';
+
 import Recipe from './Recipe';
+import React, { Component } from 'react';
 
 
 class Recipes extends Component {

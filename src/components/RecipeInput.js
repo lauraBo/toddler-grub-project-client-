@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { addRecipe } from '../actions/recipes';
+import { addRecipe } from '../actions/addRecipe';
+
 import { connect } from 'react-redux';
 
 export class RecipeInput extends Component {

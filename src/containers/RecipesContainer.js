@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchRecipes } from './actions/recipes';
-import Recipes from '.components/Recipes';
-import RecipeInput from '../components/recipeInput';
+import { fetchRecipes } from '../actions/fetchRecipes';
+import Recipes from '../components/Recipes';
+import RecipeInput from '../components/RecipeInput';
 
 class RecipesContainer extends Component {
 

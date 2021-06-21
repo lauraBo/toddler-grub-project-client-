@@ -1,29 +1,29 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, {render} from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import recipeReducer from './reducers/recipeReducer';
+import recipeReducer from './reducers/recipeReducer.js';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const store = createStore(recipeReducer, applyMiddleware(thunk));
-
-
+//const store = createStore(recipeReducer, applyMiddleware(thunk));
 // ?   const store = createStore(recipeReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
-
-ReactDOM.render(
-  <Provider store={store}>
-    <App store={store} />
-  </Provider>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//ReactDOM.render(
+ // <Provider store={store}>
+  //  <App />
+  //</Provider>,
+ //// document.getElementById('root')
+//);
 
 
+
+
+    const AppWrapper = ({ children }) => {
+        const store = createStore(recipeReducer, applyMiddleware(thunk));
+
+        return (<Provider store={store}>{children}</Provider>);
+    }
+
+    render(<AppWrapper> <App /> </AppWrapper>, document.getElementById("root") )
