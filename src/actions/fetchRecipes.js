@@ -1,12 +1,25 @@
-export const fetchRecipes = () => {
-    return (dispatch) => {
-      dispatch({ type: 'LOADING_RECIPES'})
-      fetch('http://localhost:3000/api/v1/recipes').then(response => {
-        return response.json()
-      }).then(responseJSON => {
-        dispatch({ type: 'DISPLAY_RECIPES', recipes: responseJSON.text })
-      })
+export const FETCH_RECIPES_PENDING = 'FETCH_RECIPES_PENDING';
+export const FETCH_RECIPES_SUCCESS = 'FETCH_RECIPES_SUCCESS';
+export const FETCH_RECIPES_ERROR = 'FETCH_RECIPES_ERROR';
+
+function fetchRecipesPending() {
+    return {
+        type: FETCH_RECIPES_PENDING
     }
-  }
+}
+
+function fetchRecipesSuccess(recipes) {
+    return {
+        type: FETCH_RECIPES_SUCCESS
+        recipes: recipes
+    }
+}
+
+function fetchRecipesError(error) {
+    return {
+        type: FETCH_RECIPES_ERROR
+        error: error
+    }
+}
 
 

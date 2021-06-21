@@ -1,24 +1,30 @@
-export default function recipeReducer(state = {
-    recipes: []
-  }, action) {
+import {FETCH_RECIPES_PENDING, FETCH_RECIPES_SUCCESS, FETCH_RECIPES_ERROR} from '../actions/fetchRecipes';
+
+const initialState = {
+  pending: false,
+  recipes: [],
+  error: null
+}
+export default function recipeReducer(state = initialState, action) {
     switch (action.type) {
   
-      case 'ADD_RECIPE':
+      case 'FETCH_RECIPES_PENDING':
         return {
           ...state,
-          recipes: [...state.recipes, action.recipe]
+          pending: true
         }
-        case 'LOADING_RECIPES':
+        case 'FETCH_RECIPES_SUCCESS':
       return {
         ...state,
-        cats: [...state.recipes],
-        loading: true
+        pending: false,
+        recipes: action.payload
       }
-        case 'DISPLAY_RECIPES': //or should this be names FETCH_RECIPES
-          return{
-
-
-          }
+        case 'FETCH_RECIPES_ERROR':
+      return {
+        ...state,
+        pending: false,
+        error: action.error
+      }
           
       default:
         return state;
@@ -26,5 +32,6 @@ export default function recipeReducer(state = {
     }
   };
 
-
- 
+  export const getRecipes = state => state.recipes;
+  export const getRecipesPending = state => state.pending;
+  export const getRecipesError = state => state.error;
