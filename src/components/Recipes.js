@@ -1,12 +1,13 @@
 
-import Recipe from './Recipe';
 import React, { Component } from 'react';
+import Recipe from './Recipe';
 
 
 class Recipes extends Component {
 
   render() {
-    const { recipes } = this.props;
+    if (this.props.recipes){
+    const recipes = this.props.recipes;
     const recipeList = recipes.map(recipe => {
       return (
         <Recipe
@@ -14,11 +15,11 @@ class Recipes extends Component {
             recipe={recipe}
         />
       )
-    });
+    })};
 
-    return(
+      return(
       <ul>
-        {recipeList}
+        {this.props.recipes}
       </ul>
     );
   }

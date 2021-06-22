@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadRecipes, addRecipe, toggleRecipe} from '../actions/actionCreators'
-//import fetchRecipes from '../actions/fetchRecipesMain';
-//import {getRecipesError, getRecipes, getRecipesPending} from '../reducers/recipeReducer';
+import { loadRecipes, addRecipe} from '../actions/actionCreators'
 import Recipes from '../components/Recipes';
 import RecipeInput from '../components/RecipeInput';
-//import loading spinner?
+
 
 class RecipesContainer extends Component {
 
