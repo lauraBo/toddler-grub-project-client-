@@ -9,12 +9,13 @@ import RecipeInput from '../components/RecipeInput';
 
 class RecipesContainer extends Component {
 
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
       }
 
 
-      function fetchRecipes() {
+      fetchRecipes() {
+        return (dispatch) => {
             fetch('http://localhost:3000/api/v1/recipes')
             .then(res => res.json())
             .then(res => {
@@ -22,9 +23,11 @@ class RecipesContainer extends Component {
             })
             .catch(error => console.log(error))
             }
+          }
+            
    
 
-        componentWillMount() {
+        componentDidMount() {
           this.fetchRecipes();
       }
 
