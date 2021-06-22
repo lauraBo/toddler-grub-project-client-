@@ -9,7 +9,7 @@ class Recipe extends Component {
     return (
       <div>
         <li>
-          {recipe.text}  
+          {recipe.data}  
         </li>
       </div>
       // how do i display all the fields? i.e ingredients, method, time etc 
