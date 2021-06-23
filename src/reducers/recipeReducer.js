@@ -2,7 +2,11 @@
 import { LOAD_RECIPES, ADD_RECIPE } from '../actions/actionTypes'
 
 
-function recipeReducer(state = [], action) {
+const initialState =
+{ recipes:[]}
+
+
+function recipeReducer(state = initialState, action) {
     
   switch (action.type) {
   
@@ -11,17 +15,17 @@ function recipeReducer(state = [], action) {
         //return {recipes: action.payload}
 
         case 'ADD_RECIPE':
-     return [
+     return {
         ...state,
-        {
-          id: action.id,
-          title: action.title,
-          ingredients: action.ingredients,
-          time: action.time,
-          freezable: action.freezable
-        }
-      ];
-      //return {...state, recipes: [...state.recipes, action.payload]};
+        //{
+         // id: action.id,
+         // title: action.title,
+         // ingredients: action.ingredients,
+         // time: action.time,
+         // freezable: action.freezable
+       // }
+     // ];
+      recipes: [...state.recipes, action.payload]} //action.recipe?
 
       default:
         return state;
