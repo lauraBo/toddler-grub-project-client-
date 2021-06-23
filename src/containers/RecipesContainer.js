@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadRecipes, addRecipe} from '../actions/actionCreators'
+import { loadRecipes, addRecipe } from '../actions/actionCreators'
 import Recipes from '../components/Recipes';
 import RecipeInput from '../components/RecipeInput';
 
 
 class RecipesContainer extends Component {
 
-    constructor() {
-        super();
+
+      constructor(props) {
+        super(props)
+        this.state = {
+          recipes: [],
+        };
       }
 
 
@@ -32,8 +36,8 @@ class RecipesContainer extends Component {
     render() {
       return (
       <div>
-        <RecipeInput addRecipe={this.props.addRecipe}/>
-        <Recipes recipes={this.props.recipes}/>
+          <Recipes recipes={this.props.recipes}/>
+         <RecipeInput addRecipe={this.props.addRecipe}/>
       </div>
         )
       }

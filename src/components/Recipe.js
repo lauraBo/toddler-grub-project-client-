@@ -12,7 +12,7 @@ class Recipe extends Component {
           {recipe.data}  
         </li>
       </div>
-      // how do i display all the fields? i.e ingredients, method, time etc 
+      // how do i display all the fields? i.e ingredients, instructions, time etc 
     );
   }
 };

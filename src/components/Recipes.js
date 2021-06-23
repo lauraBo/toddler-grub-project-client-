@@ -11,7 +11,7 @@ class Recipes extends Component {
     const recipeList = recipes.map(recipe => {
       return (
         <Recipe
-            key={recipe.id}
+            //key={recipe.id}
             recipe={recipe}
         />
       )

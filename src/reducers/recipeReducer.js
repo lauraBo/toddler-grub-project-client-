@@ -1,5 +1,5 @@
-//import { FETCH_RECIPES_PENDING, FETCH_RECIPES_SUCCESS, FETCH_RECIPES_ERROR } from '../actions/actionTypes';
-//import { LOAD_RECIPES, ADD_RECIPE } from '../actions/actionTypes'
+
+import { LOAD_RECIPES, ADD_RECIPE } from '../actions/actionTypes'
 
 
 function recipeReducer(state = [], action) {
@@ -7,8 +7,8 @@ function recipeReducer(state = [], action) {
   switch (action.type) {
   
       case 'LOAD_RECIPES':
-        //return action.recipes;
-        return {recipes: action.payload}
+        return action.recipes;
+        //return {recipes: action.payload}
 
         case 'ADD_RECIPE':
      return [

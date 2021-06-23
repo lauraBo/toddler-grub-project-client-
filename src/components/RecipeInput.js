@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addRecipe } from '../actions/addRecipe';
+import { addRecipe } from '../actions/actionCreators';
 
 import { connect } from 'react-redux';
 
@@ -8,7 +8,7 @@ export class RecipeInput extends Component {
   state = {
     title: '',
     ingredients: '',
-    method: '',
+    instructions: '',
     time: '',
     freezable: ''  //do i need a constructor(props) function for this?
     
@@ -33,9 +33,9 @@ export class RecipeInput extends Component {
       });
     }
 
-  handleOnMethodChange = event => {
+  handleOnInstructionsChange = event => {
     this.setState({
-      method: event.target.value
+      instructions: event.target.value
     });
   }
 
@@ -78,9 +78,9 @@ export class RecipeInput extends Component {
         <p>
           <input
             type="text"
-            onChange={(event) => this.handleOnMethodChange(event)}
-            value={this.state.method}
-            placeholder="method" />
+            onChange={(event) => this.handleOnInstructionsChange(event)}
+            value={this.state.instructions}
+            placeholder="instruction" />
         </p>
         <p>
           <input
