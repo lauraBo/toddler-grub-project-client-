@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { addRecipe } from '../actions/actionCreators';
-
 import { connect } from 'react-redux';
 
 export class RecipeInput extends Component {
@@ -10,16 +9,9 @@ export class RecipeInput extends Component {
     ingredients: '',
     instructions: '',
     time: '',
-    freezable: ''  //do i need a constructor(props) function for this?
-    
+    freezable: ''  
   }
 
-  //can I use this to simplify code? ;
-  //handleOnChange(event) {
-    //this.setState({
-      //?: event.target.value,
-    //});
-  //}
 
   handleOnTitleChange = event => {
     this.setState({
@@ -102,4 +94,4 @@ export class RecipeInput extends Component {
   }
 };
 
-export default connect(null, { addRecipe })(RecipeInput); //do I still need this?
+export default connect(null, { addRecipe })(RecipeInput)
