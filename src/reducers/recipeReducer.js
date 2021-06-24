@@ -16,14 +16,6 @@ function recipeReducer(state = initialState, action) {
         case ADD_RECIPE:
      return {
         ...state,
-        //{
-         // id: action.id,
-         // title: action.title,
-         // ingredients: action.ingredients,
-         // time: action.time,
-         // freezable: action.freezable
-       // }
-     // ];
       recipes: [...state.recipes, action.payload]} //action.recipe?
 
       default:

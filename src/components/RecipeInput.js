@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addRecipe } from '../actions/actionCreators';
+import { addRecipe } from '../actions/addRecipe';
 import { connect } from 'react-redux';
 
 export class RecipeInput extends Component {
