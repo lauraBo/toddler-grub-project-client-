@@ -1,5 +1,5 @@
 
-import { LOAD_RECIPES, ADD_RECIPE } from '../actions/actionTypes'
+import { FETCH_RECIPES, ADD_RECIPE } from '../actions/actionTypes'
 
 
 const initialState =
@@ -10,11 +10,10 @@ function recipeReducer(state = initialState, action) {
     
   switch (action.type) {
   
-      case 'LOAD_RECIPES':
-        return action.recipes;
-        //return {recipes: action.payload}
+      case FETCH_RECIPES:
+        return {recipes: action.payload}
 
-        case 'ADD_RECIPE':
+        case ADD_RECIPE:
      return {
         ...state,
         //{

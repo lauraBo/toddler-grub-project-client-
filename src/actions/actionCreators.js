@@ -1,8 +1,8 @@
 import * as actions from '../actions/actionTypes'
 
 
-export function loadRecipes(recipes) {
-  return { type: actions.LOAD_RECIPES, recipes: recipes }
+export function fetchRecipes(recipes) {
+  return { type: actions.FETCH_RECIPES, recipes: recipes }
 }
 
 // asynchronus action creator:

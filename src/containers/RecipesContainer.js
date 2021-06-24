@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadRecipes, addRecipe } from '../actions/actionCreators'
 import Recipes from '../components/Recipes';
 import RecipeInput from '../components/RecipeInput';
+import { fetchRecipes } from '../actions/fetchRecipes';
 
 
 class RecipesContainer extends Component {
@@ -16,28 +16,16 @@ class RecipesContainer extends Component {
       }
 
 
-      fetchRecipes() {
-        return (dispatch) => {
-            fetch('http://localhost:3000/api/v1/recipes')
-            .then(res => res.json())
-            .then(res => {
-                this.props.dispatch(loadRecipes(res.data));
-            })
-            .catch(error => console.log(error))
-            }
-          }
-            
-   
-
         componentDidMount() {
-          this.fetchRecipes();
+          this.props.fetchRecipes();
+          console.log(this.props);
       }
 
     render() {
       return (
       <div>
           <Recipes recipes={this.props.recipes}/>
-         <RecipeInput addRecipe={this.props.addRecipe}/>
+          <RecipeInput/>
       </div>
         )
       }
@@ -49,8 +37,12 @@ const mapStateToProps = state => {
   }
 }
   
-const mapDispatchToProps = dispatch => ({ addRecipe: recipe => dispatch({ type: "ADD_RECIPE", recipe}) })
+//const mapDispatchToProps = dispatch => ({ 
+  //loadRecipes: recipes => dispatch({ type: "LOAD_RECIPES", recipes}),
+ // addRecipe: recipe => dispatch({ type: "ADD_RECIPE", recipe}) 
+//})
                                           
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer); 
+export default connect(mapStateToProps, {fetchRecipes}) (RecipesContainer); 
 
+//(mapDispatchToProps)

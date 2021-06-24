@@ -11,18 +11,18 @@ class Recipes extends Component {
     const recipeList = recipes.map(recipe => {
       return (
         <Recipe
-            //key={recipe.id}
             recipe={recipe}
         />
       )
     })};
 
-      return(
-      <ul>
-        {this.props.recipes}
-      </ul>
-    );
+     // return(
+      //<ul>
+       // {this.recipeList}
+     // </ul>
+   // );
   }
 };
 
 export default Recipes;
+

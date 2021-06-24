@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import {connect} from 'react-redux';
 import NavBar from './components/NavBar';
 import RecipesContainer from './containers/RecipesContainer';
 import RecipeInput from './components/RecipeInput';
