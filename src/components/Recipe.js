@@ -4,12 +4,14 @@ class Recipe extends Component {
 
 
   render() {
-    const { recipe } = this.props;
+    const recipename  = this.props.recipename
+    const recipeIngredients = this.props.recipeIngredients
 
     return (
       <div>
         <li>
-          {recipe.data}  
+          {recipename}  
+          {recipeIngredients}
         </li>
       </div>
       // how do i display all the fields? i.e ingredients, instructions, time etc 

@@ -14,8 +14,6 @@ class RecipesContainer extends Component {
           recipes: [],
         };
       }
-
-
         componentDidMount() {
           this.props.fetchRecipes();
           console.log(this.props);
@@ -23,7 +21,7 @@ class RecipesContainer extends Component {
 
     render() {
       return (
-      <div>
+      <div className="App">
           <Recipes recipes={this.props.recipes}/>
           <RecipeInput/>
       </div>
