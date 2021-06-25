@@ -47,7 +47,10 @@ export class RecipeInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addRecipe(this.state);     //do i need to add this.setState to clear form?
+    this.props.addRecipe(this.state)
+    .then( () => {
+      this.props.history.push('/recipes')
+    } )     //do i need to add this.setState to clear form?
   }
 
   render() {
