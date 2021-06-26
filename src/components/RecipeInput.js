@@ -11,37 +11,15 @@ export class RecipeInput extends Component {
     time: '',
     freezable: ''  
   }
-
-
-  handleOnTitleChange = event => {
+  handleOnInputChange = (event) => {
     this.setState({
-      title: event.target.value
-    });
+      [event.target.name]: event.target.value
+    })
   }
-
-  handleOnIngredientsChange = event => {
-      this.setState({
-        ingredients: event.target.value
-      });
-    }
-
-  handleOnInstructionsChange = event => {
-    this.setState({
-      instructions: event.target.value
-    });
-  }
-
-
-  handleOnTimeChange = event => {
-      this.setState({
-        time: event.target.value
-      });
-    }
-
 
   handleOnFreezableChange = event => {
       this.setState({
-        Freezable: event.target.value
+        freezable: event.target.checked
       });
     }
 
@@ -59,38 +37,43 @@ export class RecipeInput extends Component {
         <p>
           <input
             type="text"
-            onChange={(event) => this.handleOnTitleChange(event)}
+            name='title'
+            onChange= {this.handleOnInputChange}
             value={this.state.title}
             placeholder="recipe name" />
         </p>
         <p>
           <input
             type="text"
-            onChange={(event) => this.handleOnIngredientsChange(event)}
+            name='ingredients'
+            onChange= {this.handleOnInputChange}
             value={this.state.ingredients}
             placeholder="ingredients" />
         </p>
         <p>
           <input
             type="text"
-            onChange={(event) => this.handleOnInstructionsChange(event)}
+            name="instructions"
+            onChange= {this.handleOnInputChange}
             value={this.state.instructions}
             placeholder="instruction" />
         </p>
         <p>
           <input
             type="text"
-            onChange={(event) => this.handleOnTimeChange(event)}
+            name="time"
+            onChange= {this.handleOnInputChange}
             value={this.state.time}
             placeholder="time" />
         </p>
-        <p>
+        <p> <label>
           <input
-            type="text"
+            type="checkbox"
             onChange={(event) => this.handleOnFreezableChange(event)}
-            value={this.state.freezable}
-            placeholder="freezable?" />
-        </p>
+            checked={this.state.freezable}
+             /> 
+             freezable?
+             </label> </p>
         <input type="submit" />
       </form>
     );
