@@ -14,7 +14,9 @@ if (!item){
         <li style={{listStyleType: 'none'}}>
         <div> {item.title} </div> 
         <div>(time: {item.time})</div> 
-        instructions: {item.instructions}
+        Ingredients: {item.ingredients}
+        Instructions: {item.instructions}
+        <div>.</div>
         </li>
       </div>
       // how do i display all the fields? i.e ingredients, instructions, time etc 

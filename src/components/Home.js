@@ -1,9 +1,12 @@
 import React from 'react';
+import homepagephoto from '../assets/images/homepagephoto.jpg';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
+    <div className='home'>
+      <h1 >Toddler Grub</h1>
+      <h3 >A recipe logger for busy parents</h3>
+      <img className="photo" src={homepagephoto} />
     </div>
   );
 };

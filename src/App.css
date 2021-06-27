@@ -39,5 +39,25 @@
 
   .item {
     margin-right: 20px;
+	margin-left: 15px;
 }
+
+.photo {
+	height: 200px;
+	width: 200px;
+	margin-left: 15px;
+  }
   
+.home {
+	font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+  margin: 15px;
+}
+
+.navbar {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}

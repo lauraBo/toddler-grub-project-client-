@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Recipes from '../components/Recipes';
-import RecipeInput from '../components/RecipeInput';
 import { fetchRecipes } from '../actions/fetchRecipes';
 
 

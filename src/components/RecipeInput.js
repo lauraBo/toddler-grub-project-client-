@@ -28,12 +28,12 @@ export class RecipeInput extends Component {
     this.props.addRecipe(this.state)
     .then( () => {
       this.props.history.push('/recipes')
-    } )     //do i need to add this.setState to clear form?
+    } )   
   }
 
   render() {
     return(
-      <form onSubmit={(event) => this.handleOnSubmit(event)}>
+      <form onSubmit={(event) => this.handleOnSubmit(event)} style={{paddingLeft: '20px'}}>
         <p>
           <input
             type="text"
