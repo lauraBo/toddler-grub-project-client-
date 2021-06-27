@@ -6,7 +6,7 @@ const Home = () => {
     <div className='home'>
       <h1 >Toddler Grub</h1>
       <h3 >A recipe logger for busy parents</h3>
-      <img className="photo" src={homepagephoto} />
+      <img className="photo" src={homepagephoto} alt='toddlereating'/>
     </div>
   );
 };
